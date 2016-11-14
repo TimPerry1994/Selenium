@@ -1,14 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+  <parameter name="browser" value="chrome"/>
+  <test name="FirefoxTest(failed)" parallel="tests">
+    <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="Main">
+      <class name="seleniumGrid.Calculator">
         <methods>
-          <include name="simpleTest"/>
-          <include name="setUp"/>
+          <include name="launchbrowser"/>
+          <include name="launchbrowser"/>
+          <include name="launchbrowser"/>
+          <include name="calculatepercent"/>
         </methods>
-      </class> <!-- Main -->
+      </class> <!-- seleniumGrid.Calculator -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- FirefoxTest(failed) -->
+  <test name="ChromeTest(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="seleniumGrid.Calculator">
+        <methods>
+          <include name="launchbrowser"/>
+          <include name="launchbrowser"/>
+          <include name="launchbrowser"/>
+          <include name="calculatepercent"/>
+        </methods>
+      </class> <!-- seleniumGrid.Calculator -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+  <test name="ieTest(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="seleniumGrid.Calculator">
+        <methods>
+          <include name="launchbrowser"/>
+          <include name="launchbrowser"/>
+          <include name="launchbrowser"/>
+          <include name="calculatepercent"/>
+        </methods>
+      </class> <!-- seleniumGrid.Calculator -->
+    </classes>
+  </test> <!-- ieTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->
