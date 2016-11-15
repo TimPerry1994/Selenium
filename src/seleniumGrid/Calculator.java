@@ -3,7 +3,7 @@ package seleniumGrid;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
- 
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -24,7 +24,7 @@ public class Calculator {
 	@Parameters("browser")
 	@BeforeTest
 	public void launchbrowser(String browser) throws MalformedURLException {
-		String URL = "http://www.google.com";
+		String URL = "http://www.cleverbot.com";
  
 		if (browser.equalsIgnoreCase("firefox")) {
 			System.out.println(" Executing on FireFox");
@@ -61,25 +61,16 @@ public class Calculator {
  
 	@Test
 	public void calculatepercent() {
-		// Enter value 17 in the first number of the percent Calculator
-		driver.findElement(By.id("lst-ib")).sendKeys("end my pitiful existence");
-		// Enter value 35 in the second number of the percent Calculator
-		 
-		// Click Calculate Button
-		try {
-		    Thread.sleep(2500);
-		} catch(InterruptedException ex) {
-		    Thread.currentThread().interrupt();
-		}
-		// Get the Result Text based on its xpath
-		driver.findElement(By.id("lst-ib")).sendKeys(Keys.ENTER);
-		// Print a Log In message to the screen
 		
-		driver.findElement(By.id("uid_0")).click();
-	}
+		
+		driver.findElement(By.name("stimulus")).sendKeys("give me your dankest meme");
+		
+		driver.findElement(By.name("stimulus")).sendKeys(Keys.ENTER);
+		
+		}
  
 	@AfterTest
 	public void closeBrowser() {
-		// driver.quit();
+		driver.quit();
 	}
 }
